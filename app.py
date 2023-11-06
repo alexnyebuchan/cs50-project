@@ -1,21 +1,16 @@
+import os
+
 from flask import Flask, render_template, request
 
-app = Flask(__name)
+app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('chat.html')
+    return render_template('index.html')
 
-@app.route('/chat', methods=['POST'])
-def chat():
-    user_input = request.form['user_input']
-    
-    # Your GPT-3 interaction and response generation code goes here
+@app.route('/logs', methods=['GET'])
+def logs():
+    return render_template('logs.html')
 
-    # For now, let's assume a simple response
-    response = "Here's a humorous response to: " + user_input
-    
-    return response
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

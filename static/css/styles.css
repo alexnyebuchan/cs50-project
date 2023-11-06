@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Andes', sans-serif;
+  line-height: 1.8;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 120px;
+  padding-block: 30px;
+  background-color: blanchedalmond;
+}
+
+.options {
+  display: flex;
+}
+
+.option {
+  padding-inline: 25px;
+}
