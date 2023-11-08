@@ -14,12 +14,24 @@
   <body>
     <nav>
       <div>Icon</div>
-      <div class="options">
-        <a href="/"><button class="option">Chat</button></a>
-        <a href="/logs"><button class="option">Logs</button></a>
-      </div>
+      <ul class="options">
+        <li class="navOption"><a href="/">Chat</a></li>
+        <li class="navOption"><a href="/logs">About</a></li>
+        <li class="navOption"><a href="/logs">Saved</a></li>
+      </ul>
     </nav>
 
+    <header>
+      <h1 class="title">Recipe Maker</h1>
+      <p>
+        A recipe maker using Chat-GPT that will give recipe ideas based on
+        specific ingredients. Remind yourself what you might have at home using
+        the menu on the left.
+      </p>
+    </header>
+
     <main>{% block main %}{% endblock %}</main>
+
+    <footer>&copy; Alex Buchan 2023</footer>
   </body>
 </html>

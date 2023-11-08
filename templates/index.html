@@ -1,3 +1,50 @@
 {% extends "layout.html" %} {% block main %}
-<p>Chat</p>
+<div class="container">
+  <div class="ingredientContainer">
+    <h2>Ingredient Examples</h2>
+    <ul class="ingredientTypes">
+      <li>Larder</li>
+      <li>Fridge</li>
+      <li>Freezer</li>
+    </ul>
+    <div class="ingredientListContainer">
+      <ul>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+        <li>Ingredient</li>
+      </ul>
+    </div>
+  </div>
+  <div class="chatContainer">
+    <h1 class="chatHeader">List the ingredients you have:</h1>
+    <form action="/">
+      <input type="text" placeholder="Tomatoes, pasta, frozen spinach etc." />
+      <button class="getRecipes" type="submit">Get recipes</button>
+    </form>
+    <p name="response" id="response" cols="30" rows="10">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+      debitis, inventore ab modi quam, autem neque fugiat et reprehenderit
+      facilis ducimus nihil assumenda, tempora atque unde? Consectetur
+      dignissimos amet cum. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Veniam voluptatum enim a ex, assumenda nostrum similique provident
+      porro! Molestiae corporis laboriosam, enim accusamus incidunt repellat
+      dolorum? Impedit officiis facere ex.
+    </p>
+  </div>
+</div>
 {% endblock %}
