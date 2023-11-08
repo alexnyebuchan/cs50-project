@@ -1,15 +1,20 @@
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    if request.method == "GET":
+        return render_template('index.html')
+    elif request.method == 'POST':
+        ingredients = request.form.get("ingredients")
+        print(ingredients)
+        return redirect('/')
 
-@app.route('/logs', methods=['GET'])
-def logs():
-    return render_template('logs.html')
+
+
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

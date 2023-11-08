@@ -32,8 +32,13 @@
   </div>
   <div class="chatContainer">
     <h1 class="chatHeader">List the ingredients you have:</h1>
-    <form action="/">
-      <input type="text" placeholder="Tomatoes, pasta, frozen spinach etc." />
+    <form action="/" method="post">
+      <input
+        type="text"
+        placeholder="Tomatoes, pasta, frozen spinach etc."
+        name="ingredients"
+        id="ingredients"
+      />
       <button class="getRecipes" type="submit">Get recipes</button>
     </form>
     <p name="response" id="response" cols="30" rows="10">
