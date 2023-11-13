@@ -1,4 +1,11 @@
 {% extends "layout.html" %} {% block main %}
+<header>
+  <h1 class="title">Recipe Maker</h1>
+  <strong class="headerInfo">
+    Chat-GPT will give you recipe ideas based on your kitchen ingredients.
+    Remind yourself what you might have at home using the menu on the left.
+  </strong>
+</header>
 <div class="container">
   <div class="ingredientContainer">
     <h2>Ingredient Examples</h2>
@@ -39,17 +46,36 @@
         name="ingredients"
         id="ingredients"
       />
-      <button class="getRecipes" type="submit">Get recipes</button>
+      <button class="getRecipes" type="submit">Get recipe ideas</button>
     </form>
-    <p name="response" id="response" cols="30" rows="10">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-      debitis, inventore ab modi quam, autem neque fugiat et reprehenderit
-      facilis ducimus nihil assumenda, tempora atque unde? Consectetur
-      dignissimos amet cum. Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Veniam voluptatum enim a ex, assumenda nostrum similique provident
-      porro! Molestiae corporis laboriosam, enim accusamus incidunt repellat
-      dolorum? Impedit officiis facere ex.
-    </p>
+
+    <!-- {% if responses %}
+    <ul name="response" id="response" class="responses">
+      {% for response in responses %}
+      <li class="response">{{response}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} -->
+    <ul name="response" id="response" class="responses">
+      <li class="response">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
+        nesciunt nam quidem provident est? Voluptate ullam optio non libero
+        maiores quia. Officiis laudantium nam expedita. Alias totam labore porro
+        illo?
+      </li>
+      <li class="response">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
+        nesciunt nam quidem provident est? Voluptate ullam optio non libero
+        maiores quia. Officiis laudantium nam expedita. Alias totam labore porro
+        illo?
+      </li>
+      <li class="response">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
+        nesciunt nam quidem provident est? Voluptate ullam optio non libero
+        maiores quia. Officiis laudantium nam expedita. Alias totam labore porro
+        illo?
+      </li>
+    </ul>
   </div>
 </div>
 {% endblock %}
