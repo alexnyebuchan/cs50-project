@@ -12,22 +12,33 @@
   </head>
 
   <body>
-    <nav>
-      <div>
-        <img
-          src="{{ url_for('static', filename='images/chefGPTlogoone.png') }}"
-          alt="My Image"
-          class="logo"
-        />
-      </div>
-      <ul class="options">
-        <li class="navOption"><a href="/">Chat</a></li>
-        <li class="navOption"><a href="/login">Login</a></li>
-        <li class="navOption"><a href="/register">Register</a></li>
-      </ul>
-    </nav>
+    <div class="page-container">
+      <nav>
+        <div class="logoContainer">
+          <a href="/">
+            <img
+              src="{{ url_for('static', filename='images/chefGPTlogoone.png') }}"
+              alt="My Image"
+              class="logo"
+            />
+          </a>
+          <p class="logoTitle">Recipe maker 1.0</p>
+        </div>
 
-    <main>{% block main %}{% endblock %}</main>
+        <ul class="options">
+          {% if session["user_id"] %}
+          <li><a class="navOption" href="/">Make a Recipe</a></li>
+          <li><a class="navOption" href="/larder">Larder</a></li>
+          <li><a class="navOption" href="/logout">Logout</a></li>
+          {% else %}
+          <li><a class="navOption" href="/login">Login</a></li>
+          <li><a class="navOption" href="/register">Register</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+
+      <main>{% block main %}{% endblock %}</main>
+    </div>
 
     <footer>
       <div class="footerContainer">
@@ -35,5 +46,7 @@
         <p>Powered by Chat-GPT</p>
       </div>
     </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>

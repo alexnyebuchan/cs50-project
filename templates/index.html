@@ -1,16 +1,51 @@
 {% extends "layout.html" %} {% block main %}
+<div class="larderHeader">
+  <a href="/larder"
+    ><h3 class="saveLard">Save items to your larder here +</h3>
+  </a>
+</div>
 <header>
-  <h1 class="title">Recipe Maker</h1>
+  <h1 class="title">Fridge Dinners Made Easy</h1>
   <strong class="headerInfo">
     Chat-GPT will give you recipe ideas based on your kitchen ingredients.
     Remind yourself what you might have at home using the menu on the left.
   </strong>
 </header>
 <div class="container">
+  <div class="chatContainer">
+    <div class="question">
+      <div class="yourLarder">
+        <h3>Your Larder:</h3>
+        <p>
+          {{larder}} <span><a class="edit" href="/larder">(Edit)</a></span>
+        </p>
+        <h3>+</h3>
+      </div>
+      <h1 class="chatHeader">What fresh ingredients do you have at home?</h1>
+
+      <form action="/" method="post">
+        <input
+          type="text"
+          placeholder="Tomatoes, chicken, tofu, fresh corainder etc."
+          name="ingredients"
+          id="ingredients"
+        />
+        <button class="getRecipes" type="submit">Get recipe ideas</button>
+      </form>
+    </div>
+
+    {% if responses %}
+    <ul name="response" id="response" class="responses">
+      {% for response in responses %}
+      <li class="response">{{response}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
   <div class="ingredientContainer">
     <h2>Ingredient Examples</h2>
     <ul class="ingredientTypes">
-      <li>Larder</li>
+      <li>Pantry</li>
       <li>Fridge</li>
       <li>Freezer</li>
     </ul>
@@ -36,46 +71,6 @@
         <li>Ingredient</li>
       </ul>
     </div>
-  </div>
-  <div class="chatContainer">
-    <h1 class="chatHeader">List the ingredients you have:</h1>
-    <form action="/" method="post">
-      <input
-        type="text"
-        placeholder="Tomatoes, pasta, frozen spinach etc."
-        name="ingredients"
-        id="ingredients"
-      />
-      <button class="getRecipes" type="submit">Get recipe ideas</button>
-    </form>
-
-    <!-- {% if responses %}
-    <ul name="response" id="response" class="responses">
-      {% for response in responses %}
-      <li class="response">{{response}}</li>
-      {% endfor %}
-    </ul>
-    {% endif %} -->
-    <ul name="response" id="response" class="responses">
-      <li class="response">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
-        nesciunt nam quidem provident est? Voluptate ullam optio non libero
-        maiores quia. Officiis laudantium nam expedita. Alias totam labore porro
-        illo?
-      </li>
-      <li class="response">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
-        nesciunt nam quidem provident est? Voluptate ullam optio non libero
-        maiores quia. Officiis laudantium nam expedita. Alias totam labore porro
-        illo?
-      </li>
-      <li class="response">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque
-        nesciunt nam quidem provident est? Voluptate ullam optio non libero
-        maiores quia. Officiis laudantium nam expedita. Alias totam labore porro
-        illo?
-      </li>
-    </ul>
   </div>
 </div>
 {% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block main %}
+
+<div class="larderContainer">
+  <h1>Your Larder</h1>
+  <p class="larderInfo">
+    List non-perishables that make up your kitchen staples. Examples: Oils,
+    Vinegars, Sauces, Canned Goods, Spices, Dried herbs, Frozen Goods. More
+    suggestions below.
+  </p>
+  <p class="larderInfo">
+    This larder will then be automatically added to your recipe list on the main
+    page.
+  </p>
+  <div class="larderMain">
+    <div class="suggestions">
+      <select name="larderSuggestions" id="larderSuggestions">
+        <option value="oils">Oils & Vinegars</option>
+        <option value="herbs">Herbs & Spices (dried)</option>
+        <option value="cans">Canned Goods</option>
+        <option value="grains">Grains & Legumes</option>
+        <option value="flour">Flour & Baking Essentials</option>
+        <option value="nuts">Nuts & Seeds</option>
+        <option value="sauces">Condiments & Sauces</option>
+        <option value="jars">Canned or Jarred Condiments</option>
+        <option value="fruits">Dried Fruits</option>
+        <option value="misc">Miscellaneous</option>
+      </select>
+      <ul>
+        <li>loop through the ingredients?</li>
+      </ul>
+    </div>
+    <form class="larderForm" action="/larder" method="post">
+      <textarea
+        name="larder"
+        id="larder"
+        cols="30"
+        rows="10"
+        placeholder="List here ingredients, seperated with commas."
+      >
+  {{larder}}</textarea
+      >
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
