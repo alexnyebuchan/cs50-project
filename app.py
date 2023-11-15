@@ -170,7 +170,7 @@ def register():
         hash = generate_password_hash(password)
 
         cursor.execute("INSERT INTO users (name, hash, larder) VALUES (?, ?, ?)",
-            (username, hash, 'tobasco')
+            (username, hash, 'salt and pepper')
             )
         connection.commit()
 

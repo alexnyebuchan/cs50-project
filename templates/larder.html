@@ -1,16 +1,26 @@
 {% extends "layout.html" %} {% block main %}
-
+<!-- Hero -->
+<div class="backgroundImage">
+  <h1 class="larderTitle">Your Larder</h1>
+</div>
+<!-- Main -->
 <div class="larderContainer">
-  <h1>Your Larder</h1>
-  <p class="larderInfo">
-    List non-perishables that make up your kitchen staples. Examples: Oils,
-    Vinegars, Sauces, Canned Goods, Spices, Dried herbs, Frozen Goods. More
-    suggestions below.
-  </p>
-  <p class="larderInfo">
-    This larder will then be automatically added to your recipe list on the main
-    page.
-  </p>
+  <div class="larderSecondary">
+    <p class="larderInfo">
+      List non-perishables that make up your kitchen staples. Examples: Oils,
+      Vinegars, Sauces, Canned Goods, Spices, Dried herbs, Frozen Goods. More
+      suggestions below.
+    </p>
+    <p class="larderInfo">
+      This larder will then be automatically added to your recipe list on the
+      main page.
+    </p>
+    <br />
+    <p class="larderInfo">
+      Select a category from the below menu, then click on individual food items
+      to add them to your larder quickly.
+    </p>
+  </div>
   <div class="larderMain">
     <div class="suggestions">
       <select name="larderSuggestions" id="larderSuggestions">
@@ -25,9 +35,7 @@
         <option value="fruits">Dried Fruits</option>
         <option value="misc">Miscellaneous</option>
       </select>
-      <ul>
-        <li>loop through the ingredients?</li>
-      </ul>
+      <ul id="ingredientList"></ul>
     </div>
     <form class="larderForm" action="/larder" method="post">
       <textarea
@@ -39,7 +47,7 @@
       >
   {{larder}}</textarea
       >
-      <button type="submit">Save</button>
+      <button class="btn" type="submit">Save</button>
     </form>
   </div>
 </div>

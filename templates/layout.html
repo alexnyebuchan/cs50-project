@@ -27,7 +27,7 @@
 
         <ul class="options">
           {% if session["user_id"] %}
-          <li><a class="navOption" href="/">Make a Recipe</a></li>
+          <li><a class="navOption" href="/">Make Recipe</a></li>
           <li><a class="navOption" href="/larder">Larder</a></li>
           <li><a class="navOption" href="/logout">Logout</a></li>
           {% else %}
@@ -47,6 +47,7 @@
       </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/updateInput.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/updateLarder.js') }}"></script>
   </body>
 </html>

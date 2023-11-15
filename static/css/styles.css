@@ -124,6 +124,45 @@ ul {
 }
 
 /* Index */
+.btn,
+.btnLogin {
+  max-width: 30%;
+  border: none;
+  background: none;
+  margin-block: 5px;
+  font: inherit;
+  cursor: pointer;
+  padding: 5px 25px;
+  border-radius: 5px;
+  border: 1px solid var(--green);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    border 0.1s ease-in-out;
+}
+
+.btn {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+.btnLogin {
+  margin: auto;
+  background-color: var(--orange);
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.btnLogin:hover {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -165,7 +204,7 @@ ul {
 }
 
 .chatContainer {
-  background-color: var(--gold);
+  background-color: var(--white);
   color: var(--black);
   width: 70%;
 }
@@ -180,7 +219,7 @@ ul {
 .ingredientListContainer {
   column-count: 3;
   column-gap: 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .question {
@@ -229,14 +268,38 @@ form {
   border: 1px solid var(--black);
 }
 
-.responses {
+.responseContainer {
   border-top: 1px #e5e5e5 solid;
   background-color: #f7f7f8;
   padding: 30px 50px;
+  display: flex;
+}
+
+.secondLogo {
+  height: 45px;
+  padding-top: 12px;
+}
+
+.responses {
+  margin-left: 15px;
 }
 
 .response {
-  padding: 9px 5px;
+  padding: 6px 5px;
+}
+
+.perishable {
+  background-color: var(--green);
+  color: var(--white);
+  width: 100%;
+  margin: auto;
+  padding: 2px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out background-color;
+}
+
+.perishable:hover {
+  background-color: var(--orange);
 }
 
 /* Login */
@@ -251,23 +314,56 @@ form {
 
 /* Larder */
 .larderContainer {
+  padding: 20px 30px;
+  background-color: var(--charcoal);
+}
+
+.backgroundImage:before {
+  background-image: url('../images/pantry.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+}
+
+.backgroundImage {
+  position: relative;
+  background-color: var(--charcoal);
   display: flex;
   flex-direction: column;
   text-align: center;
   width: 100%;
   margin: auto;
-  color: var(--black);
-  background-color: var(--gold);
-  padding: 20px;
+  color: var(--white);
+  padding-top: 20px;
+  height: 200px;
+}
+
+.larderTitle {
+  position: relative;
+  font-size: 55px;
+  margin: auto;
+}
+
+.larderSecondary {
+  padding-bottom: 20px;
+  background-color: var(--charcoal);
 }
 
 .larderInfo {
-  margin-bottom: 15px;
+  color: var(--white);
 }
 
 .larderMain {
   display: flex;
   flex: row;
+  background-color: var(--charcoal);
 }
 
 select {
@@ -275,8 +371,9 @@ select {
   border: none;
   padding: 10px;
   margin-right: 10px;
-  background-color: var(--charcoal);
+  background-color: #5f6c78;
   color: var(--white);
+  margin-bottom: 20px;
 }
 
 option {
@@ -285,13 +382,33 @@ option {
 }
 
 .larderForm {
-  margin: auto;
+  margin-left: 20px;
   width: 100%;
 }
 
 textarea {
   font-size: 25px;
   padding: 15px;
+  margin-bottom: 8px;
+  background-color: #f7f7f8;
+}
+
+#ingredientList {
+  columns: 2;
+}
+
+.ingredientItem {
+  background-color: var(--charcoal);
+  color: var(--white);
+  width: 100%;
+  margin: auto;
+  padding: 2px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out background-color;
+}
+
+.ingredientItem:hover {
+  background-color: var(--orange);
 }
 
 @media only screen and (max-width: 767px) {
@@ -327,5 +444,20 @@ textarea {
 
   .larderContainer {
     width: 100%;
+  }
+
+  .larderForm {
+    margin-left: 0;
+  }
+
+  .btn {
+    margin: auto;
+    width: 50%;
+  }
+
+  .ingredientListContainer {
+    column-count: 2;
+    column-gap: 10px;
+    font-size: 20px;
   }
 }

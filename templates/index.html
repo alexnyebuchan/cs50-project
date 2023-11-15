@@ -34,41 +34,77 @@
       </form>
     </div>
 
-    {% if responses %}
-    <ul name="response" id="response" class="responses">
-      {% for response in responses %}
-      <li class="response">{{response}}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    
+      {% if responses %}
+      <div class="responseContainer"></div>
+      <img
+        src="{{ url_for('static', filename='images/chatgptlogo.png') }}"
+        alt="My Image"
+        class="secondLogo"
+      />
+      <ul name="response" id="response" class="responses">
+        {% for response in responses %}
+        <li class="response">{{response}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+      {% endif %}
+    
   </div>
   <div class="ingredientContainer">
-    <h2>Ingredient Examples</h2>
-    <ul class="ingredientTypes">
-      <li>Pantry</li>
-      <li>Fridge</li>
-      <li>Freezer</li>
-    </ul>
+    <h2>Suggestions</h2>
     <div class="ingredientListContainer">
       <ul>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
-        <li>Ingredient</li>
+        <li class="perishable">Chicken</li>
+        <li class="perishable">Beef</li>
+        <li class="perishable">Pork</li>
+        <li class="perishable">Tuna Steak</li>
+        <li class="perishable">Salmon Fillets</li>
+        <li class="perishable">Turkey</li>
+        <li class="perishable">Lamb</li>
+        <li class="perishable">Bacon</li>
+        <li class="perishable">Sausages</li>
+        <li class="perishable">Ham</li>
+        <li class="perishable">Salami</li>
+        <li class="perishable">Chorizo</li>
+        <li class="perishable">Eggs</li>
+        <li class="perishable">Milk</li>
+        <li class="perishable">Cheddar</li>
+        <li class="perishable">Mozzerella</li>
+        <li class="perishable">Feta</li>
+        <li class="perishable">Yogurt</li>
+        <li class="perishable">Butter</li>
+        <li class="perishable">Cream</li>
+        <li class="perishable">Sour cream</li>
+        <li class="perishable">Cottage cheese</li>
+        <li class="perishable">Cream cheese</li>
+        <li class="perishable">Fresh basil</li>
+        <li class="perishable">Spinach</li>
+        <li class="perishable">Kale</li>
+        <li class="perishable">Tomatoes</li>
+        <li class="perishable">Bell peppers</li>
+        <li class="perishable">Carrots</li>
+        <li class="perishable">Cucumbers</li>
+        <li class="perishable">Broccoli</li>
+        <li class="perishable">Cauliflower</li>
+        <li class="perishable">Asparagus</li>
+        <li class="perishable">Brussels sprouts</li>
+        <li class="perishable">Mushrooms</li>
+        <li class="perishable">Celery</li>
+        <li class="perishable">Berries</li>
+        <li class="perishable">Lemons</li>
+        <li class="perishable">Limes</li>
+        <li class="perishable">Oranges</li>
+        <li class="perishable">Apples</li>
+        <li class="perishable">Grapes</li>
+        <li class="perishable">Bananas</li>
+        <li class="perishable">Pineapple</li>
+        <li class="perishable">Avocado</li>
+        <li class="perishable">Peaches</li>
+        <li class="perishable">Plums</li>
+        <li class="perishable">Pears</li>
+        <li class="perishable">Watermelon</li>
+        <li class="perishable">Cantaloupe</li>
       </ul>
     </div>
   </div>
