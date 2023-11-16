@@ -5,10 +5,11 @@
   </a>
 </div>
 <header>
-  <h1 class="title">Fridge Dinners Made Easy</h1>
+  <h1 class="title">Step 2: Get a Recipe</h1>
   <strong class="headerInfo">
-    Chat-GPT will give you recipe ideas based on your kitchen ingredients.
-    Remind yourself what you might have at home using the menu on the left.
+    Enter your perishables, for instance from the fridge and this will combine
+    with your larder to form your overall ingredients. Then Chat-GPT will
+    respond with recipe ideas based on this.
   </strong>
 </header>
 <div class="container">
@@ -34,9 +35,8 @@
       </form>
     </div>
 
-    
-      {% if responses %}
-      <div class="responseContainer"></div>
+    {% if responses %}
+    <div class="responseContainer">
       <img
         src="{{ url_for('static', filename='images/chatgptlogo.png') }}"
         alt="My Image"
@@ -48,11 +48,10 @@
         {% endfor %}
       </ul>
     </div>
-      {% endif %}
-    
+    {% endif %}
   </div>
   <div class="ingredientContainer">
-    <h2>Suggestions</h2>
+    <h2>Quick add</h2>
     <div class="ingredientListContainer">
       <ul>
         <li class="perishable">Chicken</li>

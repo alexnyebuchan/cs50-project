@@ -46,7 +46,7 @@ def home():
         cursor.close()
         connection.close()
 
-        req = "Here is what's in my kitchen: " + ingredients + ". Here is my larder of staples like spices, tinned goods etc." + larder + ". What recipes can I make? Please provide only 3, with a brief description of how to make each dish."
+        req = "Ingredients: " + ingredients + ", " + larder + ". Please provide 3 brief recipes."
 
         client = OpenAI(api_key=environ.get('API_KEY'))
 
@@ -132,7 +132,7 @@ def login():
 
         print('Successfully logged in')
 
-        return redirect ('/')
+        return redirect ('/larder')
     
 @app.route('/register', methods=['GET', 'POST'])
 def register():
