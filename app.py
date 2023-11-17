@@ -59,7 +59,7 @@ def home():
         )
         responses = completion.choices[0].message.content.split('\n')
         
-        return render_template("index.html", responses=responses, larder=larder)
+        return render_template("responses.html", responses=responses, larder=larder, ingredients=ingredients)
  
 @app.route('/larder', methods=['GET', 'POST'])
 @login_required

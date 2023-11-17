@@ -1,0 +1,14 @@
+{% extends "index.html" %} {% block responses %} {% if responses %}
+<div class="responseContainer">
+  <img
+    src="{{ url_for('static', filename='images/chatgptlogo.png') }}"
+    alt="My Image"
+    class="secondLogo"
+  />
+  <ul name="response" id="response" class="responses">
+    {% for response in responses %}
+    <li class="response">{{response}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %} {% endblock %}

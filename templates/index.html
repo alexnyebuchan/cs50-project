@@ -1,9 +1,9 @@
 {% extends "layout.html" %} {% block main %}
-<div class="larderHeader">
+<!-- <div class="larderHeader">
   <a href="/larder"
     ><h3 class="saveLard">Save items to your larder here +</h3>
   </a>
-</div>
+</div> -->
 <header>
   <h1 class="title">Step 2: Get a Recipe</h1>
   <strong class="headerInfo">
@@ -30,25 +30,19 @@
           placeholder="Tomatoes, chicken, tofu, fresh corainder etc."
           name="ingredients"
           id="ingredients"
+          {%
+          if
+          ingredients
+          %}
+          value="{{ingredients}}"
+          {%
+          endif
+          %}
         />
         <button class="getRecipes" type="submit">Get recipe ideas</button>
       </form>
     </div>
-
-    {% if responses %}
-    <div class="responseContainer">
-      <img
-        src="{{ url_for('static', filename='images/chatgptlogo.png') }}"
-        alt="My Image"
-        class="secondLogo"
-      />
-      <ul name="response" id="response" class="responses">
-        {% for response in responses %}
-        <li class="response">{{response}}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
+    {% block responses%} {% endblock %}
   </div>
   <div class="ingredientContainer">
     <h2>Quick add</h2>
